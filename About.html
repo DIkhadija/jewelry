@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation */
+        header {
+            color: #D84315;
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            font-size: large;
+            position: relative;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        nav a {
+            color: #D84315;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.4rem 1.3rem;
+            position: relative;
+            margin: 0 10px;
+        }
+
+        nav a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: calc(20% - 2rem);
+            height: 3px;
+            background-color: #33383C;
+            transform: scale(0, 1);
+            transform-origin: left;
+            transition: transform .3s ease;
+        }
+
+        nav a:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            background-color: rgb(251, 230, 207);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            font-family: 'Roboto';
+        }
+
+        .container h1, .container h2 {
+            color: #D84315;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            font-family: 'Lato';
+        }
+
+        .container p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        .container h4 {
+           text-align: center;
+        }
+
+        .container ul {
+            margin-bottom: 1.5rem;
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .container ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Social Media Icons */
+        .social-media {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .social-media a {
+            color: #D84315;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #33383C;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #D84315;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 10px 0;
+                padding: 0.4rem 1rem;
+                width: 100%;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                padding: 0 1rem;
+                text-align: center;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+                padding: 0.3rem 1rem;
+            }
+
+            .container h1, .container h2 {
+                font-size: 2rem;
+            }
+
+            .container p, .container ul li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <h3>M_bijoux</h3>
+        <i class="menu-icon fas fa-bars"></i>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="About.html">About Us</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- About Us Section -->
+    <div class="container">
+        <h1>Welcome to M_bijoux</h1>
+        <p>Where elegance meets craftsmanship. We are a premier jewelry brand dedicated to bringing you timeless pieces that celebrate life's special moments. Our mission is to provide exquisite jewelry that combines innovative design with the highest standards of quality.</p>
+        
+        <h2>Our Story</h2>
+        <p>M_bijoux was founded in 2021 by Assia, a passionate jewelry designer with a vision to create pieces that are not only beautiful but also meaningful. Inspired by the beauty of nature and the elegance of classic design, Assia set out to craft a collection that would resonate with individuals who appreciate fine artistry and impeccable detail.</p>
+        
+        <h2>Our Collection</h2>
+        <ul>
+            <li><strong>Engagement Rings:</strong> Celebrate love with our stunning collection of engagement rings, featuring intricate designs and exceptional gemstones.</li>
+            <li><strong>Wedding Bands:</strong> Symbolize your commitment with our elegant wedding bands, available in various styles and metals.</li>
+            <li><strong>Earrings:</strong> From classic studs to statement pieces, our earrings are designed to add a touch of sophistication to any outfit.</li>
+            <li><strong>Necklaces:</strong> Discover our collection of necklaces, perfect for layering or making a bold statement.</li>
+            <li><strong>Bracelets:</strong> Adorn your wrist with our beautifully crafted bracelets, available in a range of designs.</li>
+        </ul>
+        
+        <h2>Our Craftsmanship</h2>
+        <p>Every piece of jewelry at M_bijoux is handcrafted by skilled artisans who are passionate about their craft. We use only the finest materials, including ethically sourced gemstones and precious metals, ensuring that each piece is of the highest quality. Our commitment to excellence is evident in every detail, from the initial design concept to the final polish.</p>
+        
+        <h2>Our Promise</h2>
+        <p>We believe that jewelry is more than just an accessory; it's a reflection of your unique story. That's why we are dedicated to providing exceptional customer service and a personalized shopping experience. Whether you're looking for a gift for a loved one or a special treat for yourself, we are here to help you find the perfect piece.</p>
+        
+        <h2>Connect with Us</h2>
+        <p>We love connecting with our customers and hearing your stories. Follow us on social media to stay updated on our latest collections, events, and promotions:</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/massia_bijoux?igsh=dDhmZGRuZjdjM2h0" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/M_bijoux" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com/M_bijoux" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>You can also visit our blog for styling tips, jewelry care advice, and behind-the-scenes insights into our design process.</p>
+        
+        <h2>Visit Us</h2>
+        <p>Our showroom is located in Morocco, where you can explore our collection in person and receive expert guidance from our friendly staff. We invite you to experience the beauty and elegance of M_bijoux firsthand.</p>
+        
+        <h4>Thank you for choosing M_bijoux. We look forward to being a part of your special moments.</h4>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Jewelry Store. All rights reserved.
+    </footer>
+
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const nav = document.querySelector('nav');
+
+        menuIcon.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

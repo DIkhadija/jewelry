@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #33383C;
+            --secondary-color: #D84315;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            color: #D84315;
+            padding: 0.7rem 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10%;
+            font-size: large;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            flex-grow: 1;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        nav {
+            z-index: 1;
+            display: flex;
+            position: absolute;
+            right: 4rem;
+            align-items: center;
+            margin-top: 10%;
+        }
+
+        nav a {
+            color: #D84315;
+            text-decoration: none;
+            font-size: 0.97rem;
+            font-weight: 600;
+            padding: 0.4rem 1.3rem;
+            position: relative;
+        }
+
+        nav a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: calc(100% - 2.5rem);
+            height: 3px;
+            background-color: var(--primary-color);
+            transform: scale(0, 1);
+            transform-origin: left;
+            transition: transform .3s ease;
+        }
+
+        nav a:hover::before {
+            transform: scale(1, 1);
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            right: 4rem;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        #click {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 0.7rem 1rem;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .menu {
+                font-size: 1.5rem;
+                color: #D84315;
+                margin-right: 30%;
+                padding-top: 3%;
+                padding-bottom: 10px;
+            }
+
+            nav {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                background-color:#fff;
+                right: -100%;
+                width: 100%;
+                height: 50%;
+                top: 3rem;
+                transition: all 0.3s ease;
+                
+            }
+
+            nav a {
+                color:#D84315;
+                background-color: #fff;
+                width: 100%;
+                
+            }
+
+            #click:checked~nav {
+                right: 0;
+            }
+
+            nav a::before {
+                content: none;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            max-width: 1000px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 2% auto 3% auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-container, .image-container {
+            flex: 1 1 50%;
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .image-container {
+            background: url('images/contact.jpg') no-repeat center center/cover;
+        }
+
+        h1 {
+            margin-bottom: 50px;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            margin-top: 10px;
+            
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #33383C;
+            outline: none;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #D84315;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #4f4e4e;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .social-media a {
+            text-decoration: none;
+            color: #D84315;
+            font-size: 24px;
+        }
+
+        .social-media a:hover {
+            color: #33383C;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .form-container, .image-container {
+                flex: 1 1 100%;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu -->
+    <header id="header">
+        <div class="logo">
+            <h3>M_bijoux</h3>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="mainicon">
+            <div class="menu" id="menu">
+                <i class="bi bi-list"></i>
+            </div>
+        </label>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="About.html">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Contact Form Section -->
+    <div class="container">
+        <div class="form-container">
+            <h1>Contact Us</h1>
+        
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </form>
+            <br><br>
+            <h5>Let's connect on a social media platform for updates and exclusive offers!</h5>
+            <div class="social-media">
+                <a href="https://www.instagram.com/massia_bijoux?igsh=dDhmZGRuZjdjM2h0" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61550784844257&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/khadijaDI2000" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="image-container"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Jewelry Store. All rights reserved.
+    </footer>
+</body>
+</html>
